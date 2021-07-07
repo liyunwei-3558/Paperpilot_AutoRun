@@ -14,7 +14,7 @@ pip install datetime
 
 开始-设置-显示设置  调整显示比例为100%
 
-<img src="C:\Users\10840\Desktop\纸飞机设计\题目二-纸飞机设计\codes\README.assets\image-20210707213114538.png" alt="image-20210707213114538" style="zoom:60%;" />
+<img src="README.assets/image-20210707213114538.png" alt="image-20210707213114538" style="zoom:60%;" />
 
 ## Step2 标记关键点（先固定好窗口大小和位置！！）
 
@@ -28,7 +28,7 @@ pip install datetime
 
 最后对于数字显示框的两点标记，请在框的圆角内读取坐标 如下图
 
-![image-20210707212046724](C:\Users\10840\Desktop\纸飞机设计\题目二-纸飞机设计\codes\image-20210707212046724.png)
+![image-20210707212046724](image-20210707212046724.png)
 
 ## Step3 在Mytest.py里面做修改即可
 
