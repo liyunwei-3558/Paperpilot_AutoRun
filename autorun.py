@@ -55,7 +55,7 @@ def autorun(params, pType, pWeight, pEle, pWing, theta, rou, times=1, replace=Tr
 
     for _ in range(times):
         pyautogui.moveTo(hx, hy)
-        pyautogui.dragTo(finalx, finaly, duration=0.4, button='left')
+        pyautogui.dragTo(finalx, finaly, duration=0.2, button='left')
         # time.sleep(7)
         (x1, y1) = params["rect1"]
         (x2, y2) = params["rect2"]
