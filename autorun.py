@@ -21,7 +21,7 @@ def autorun(params, pType, pWeight, pEle, pWing, theta, rou, times=1, replace=Tr
     dwx = round(((ed - st) * pWeight) / 100)
 
     pyautogui.moveTo(st, wei_y, duration=0)
-    pyautogui.dragRel(dwx, 0, duration=0.6, button='left')
+    pyautogui.dragRel(dwx, 0, duration=0.1, button='left')
     (weight_afterx, weight_aftery) = (st + dwx, wei_y)
 
     # Ele
