@@ -26,18 +26,12 @@ if __name__ == "__main__":
     df = pd.DataFrame(columns=('Type', 'Weight', 'Elevators', 'Winglets', 'theta', 'rou', 'result'))
     rows = 0
     # 从这里修改即可
+    for _ in range(30):
 
-    # nowres = autorun.autorun(paradict, "C", 6, 28, 1, 41, 100, 1, True)
-    nowres = autorun.autorun(paradict, "C", 80, 41, 1, 50, 86, 1, True)
-    nowres = autorun.autorun(paradict, "C", 55, 57, 1, 43, 105, 1, True)
-    nowres = autorun.autorun(paradict, "C", 90, 50, 1, 51, 85, 1, True)
-    nowres = autorun.autorun(paradict, "C", 76, 60, 1, 43, 105, 1, True)
-    nowres = autorun.autorun(paradict, "C", 63, 45, 1, 38, 116, 1, True)
-    nowres = autorun.autorun(paradict, "C", 21, 34, 1, 43, 95, 1, True)
-    nowres = autorun.autorun(paradict, "C", 49, 41, 1, 43, 100, 1, True)
-    nowres = autorun.autorun(paradict, "C", 15, 34, 1, 40, 100, 1, True)
-    res.append(nowres)
-    # df.loc[rows] = ["C", 10, ele, 1, 50, 50, nowres]
-    # rows += 1
-    # print(df)
-    # df.to_csv(file_addr)
+        nowres = autorun.autorun(paradict, "C", 6, 28, 1, 41, 100, 1, True)
+        res.append(nowres)
+        df.loc[rows] = ["C", 6, 28, 1, 41, 100, nowres]
+        rows += 1
+
+    print(df)
+    df.to_csv(file_addr)

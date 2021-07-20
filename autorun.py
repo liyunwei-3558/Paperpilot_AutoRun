@@ -1,5 +1,4 @@
 # create by liyunwei-3558 7/6/2021
-import cv2
 import math
 import time
 import pyautogui
@@ -7,11 +6,16 @@ import datetime
 from Utils import read_number
 
 
-
-
 def autorun(params, pType, pWeight, pEle, pWing, theta, rou, times=1, replace=True):
     # setting params
     # type
+    # K = pow(params["head"][0] - params["waist"][0], 2) + pow(params["head"][1] - params["waist"][1], 2)
+    K = params['wei100'][0]-params['wei0'][0]
+    # K /= 15217
+    K /= 227
+    print(K)
+    # K = math.sqrt(K)
+    rou *= K
     results = []
     pyautogui.click(x=params[pType][0], y=params[pType][1], clicks=1, interval=0.1, button='left')
     # weight
@@ -45,6 +49,10 @@ def autorun(params, pType, pWeight, pEle, pWing, theta, rou, times=1, replace=Tr
     (cx, cy) = params["waist"]
     (hx, hy) = params["head"]
     (dx, dy) = (hx - cx, cy - hy)
+    # nowd = pow(dx,2)+pow(dy,2)
+    #     # nowd = math.sqrt(nowd)
+    dx *= K
+    dy *= K
     dy += rou
     # 逆时针旋转
     theta = theta * math.pi / 180

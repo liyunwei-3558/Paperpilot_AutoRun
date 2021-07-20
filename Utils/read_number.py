@@ -45,7 +45,7 @@ def select_number(img):
         elif f == 1 and img[y, :].sum() == 0:
             bottom = y
             f = 0
-            res = judge_save(img[ top:bottom,:])
+            res = judge_save(img[top:bottom, :])
             break
     return res
 
@@ -85,18 +85,19 @@ def read_number(rect):
                 elif f == 1 and imgthr[:, x].sum() == 0:
                     right = x
                     f = 0
-                    temp = select_number(imgthr[:,left:right])
+                    temp = select_number(imgthr[:, left:right])
                     if temp == -1:
                         num += '.'
                     else:
                         num += str(temp)
                         if len(num) >= 4:
-                            if num == "0.0.":
-                                num = "0.0"
+                            if num[-1] == '.':
+                                num = num[0:-1]
 
                             print("num is " + num)
                             return num
-
+            if num[-1] == '.':
+                num = num[0:-1]
             print("num is " + num)
             # cv2.waitKey(0)
             return num
